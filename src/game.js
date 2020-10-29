@@ -1,7 +1,16 @@
 class Game {
+  constructor() {
+    this.player = new Player(0, 0);
+    this.treasure = new Treasure(SQUARE_SIDE, SQUARE_SIDE);
+  }
   drawGrid() {
-    // Iteration 1
-    // Draw the grid
-    // https://p5js.org/reference/#/p5/line
+    for (let i = 0; i <= WIDTH; i += SQUARE_SIDE) {
+      line(i, 0, i, WIDTH); 
+      line(0, i, HEIGHT, i); 
+    }
+  }
+  draw() {
+    this.player.draw();
+    this.treasure.drawTreasure();
   }
 }
